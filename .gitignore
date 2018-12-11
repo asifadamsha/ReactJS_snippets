@@ -5,6 +5,10 @@
 */.pnp
 .pnp.js
 
+#auto generated files
+*/README.md
+*/.gitignore
+
 # testing
 */coverage
 
