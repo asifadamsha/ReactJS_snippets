@@ -30,7 +30,7 @@ class App extends React.Component {
     } else if (!this.state.errorMessage && this.state.latitude) {
       return <SeasonDisplay latitude={this.state.latitude} />;
     } else {
-      return <Spinner text="Please allow to geolocate" />;
+      return <Spinner text="Please click allow to use you position" />;
     }
   }
 
