@@ -4,11 +4,22 @@ import _ from "lodash";
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
 
-  const userIds = _.uniq(_.map(getState().posts, "userId"));
+  // lodash chaining
 
-  userIds.forEach(userId => {
-    dispatch(fetchUser(userId));
-  });
+  _.chain(getState().posts)
+    .map("userId")
+    .uniq()
+    .forEach(userId => dispatch(fetchUser(userId)))
+    .value();
+
+  /* 
+    // same as chaine
+
+    const userIds = _.uniq(_.map(getState().posts, "userId"));
+    
+    userIds.forEach(userId => {
+      dispatch(fetchUser(userId));
+    }); */
 
   /* 
   // with async waiting
