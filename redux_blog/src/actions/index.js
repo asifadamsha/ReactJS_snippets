@@ -1,6 +1,7 @@
 import jsonPlaceHolder from "../API/jsonPlaceHolder";
 import _ from "lodash";
 
+// return a function as an action (redux-thunk)
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
 
